@@ -14,3 +14,6 @@ venv/
 .DS_Store
 Thumbs.db
 data/raw/*.zip
+
+# Processed geolocation is generated locally for future geographic analysis
+data/processed/geolocation_clean.csv
