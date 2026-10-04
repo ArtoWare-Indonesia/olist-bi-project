@@ -51,20 +51,27 @@ Tables are validated individually before joins. Merges are performed only at the
 - Seller performance
 - Geographic patterns
 
-## 8. Dashboard
+## 8. Data Cleaning Status
+v0.1.0 data cleaning is complete. The pipeline validates table grain, keys, cross-table relationships, datetime fields, missing values, duplicate rows, and domain/value consistency before exporting processed tables.
+
+The cleaning strategy is conservative: source values are preserved when the correct replacement cannot be established from evidence. Documented anomalies are retained and tracked through quality flags rather than silently corrected or deleted.
+
+Processed outputs are written to `data/processed/` and pass post-export validation for file existence, row counts, and column structure.
+
+## 9. Dashboard
 Planned for v0.4.0 using Power BI or Tableau, based on validated findings from the analysis.
 
-## 9. Technologies
+## 10. Technologies
 Python, pandas, numpy, matplotlib, seaborn, Jupyter Notebook, Git/GitHub, Power BI / Tableau.
 
-## 10. How to Run
+## 11. How to Run
 1. Clone this repository.
 2. Create and activate a Python virtual environment.
 3. Install dependencies: `pip install -r requirements.txt`.
 4. Download the Olist dataset and place the CSV files in `data/raw/`.
 5. Open the notebooks in GitHub Codespaces / VS Code and run them in order.
 
-## 11. Project Roadmap
+## 12. Project Roadmap
 | Version | Focus |
 |---|---|
 | v0.1.0 | Data Cleaning & Data Integration |
@@ -72,4 +79,4 @@ Python, pandas, numpy, matplotlib, seaborn, Jupyter Notebook, Git/GitHub, Power 
 | v0.3.0 | Advanced Analytics |
 | v0.4.0 | Dashboard & Final Business Insights |
 
-**Current status: v0.1.0 in progress.**
+**Current status: v0.1.0 complete — processed data exported and validated.**
